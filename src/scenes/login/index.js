@@ -18,11 +18,9 @@ const LoginScreen = ({navigation}) => {
         Go home
       </Button>
       <Switch
-          color={'red'}
           value={isThemeDark}
           onValueChange={toggleTheme}
         />
-
     </View>
   );
 };

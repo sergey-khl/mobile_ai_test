@@ -3,14 +3,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import AuthNavigator from './auth-navigator';
 import HomeScreen from '_scenes/home';
+import BuildScreen from '_scenes/build';
 
 const Tab = createMaterialBottomTabNavigator();
 
 function Navigator() {
   return (
     <Tab.Navigator
-      activeColor="#e91e63"
-      barStyle={{ backgroundColor: 'tomato' }}>
+      activeColor="#5FB7E6"
+
+      >
       <Tab.Screen name="Auth"
         component={AuthNavigator}
         options={{
@@ -19,14 +21,24 @@ function Navigator() {
             <MaterialCommunityIcons name="home" color={color} size={26} />
           ),
         }}
-        />
+      />
+      <Tab.Screen name="Build"
+        component={BuildScreen}
+        options={{
+          tabBarLabel: 'Build',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="wrench-outline" color={color} size={26} />
+          ),
+        }}
+      />
       <Tab.Screen name="Home" 
         component={HomeScreen} options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="account" color={color} size={26} />
         ),
-      }}/>
+        }}
+      />
     </Tab.Navigator>
   );
 }
